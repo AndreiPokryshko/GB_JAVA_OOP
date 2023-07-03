@@ -9,4 +9,9 @@ public class Pikeman extends BaseUnit{
     public Pikeman() {
         super(String.format("Копейщик №%d", ++number), 100, 10);
     }
+
+    @Override
+    public void step() {
+
+    }
 }

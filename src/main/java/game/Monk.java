@@ -24,4 +24,9 @@ public class Monk extends BaseUnit{
 
     }
 
+    @Override
+    public void step() {
+
+    }
+
 }

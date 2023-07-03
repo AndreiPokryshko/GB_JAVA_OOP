@@ -24,4 +24,9 @@ public class Magican extends BaseUnit{
         return String.format("%s Мана: %d", super.getInfo(), this.mana);
 
     }
+
+    @Override
+    public void step() {
+
+    }
 }

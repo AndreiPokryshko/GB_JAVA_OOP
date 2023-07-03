@@ -9,4 +9,9 @@ public class Peasant extends BaseUnit {
     public Peasant() {
         super(String.format("Крестьянин №%d", ++number), 100, 10);
     }
+
+    @Override
+    public void step() {
+
+    }
 }

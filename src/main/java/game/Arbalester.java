@@ -9,4 +9,9 @@ public class Arbalester extends BaseUnit{
     public Arbalester() {
         super(String.format("Арбалетчик №%d", ++number), 100, 10);
     }
+
+    @Override
+    public void step() {
+
+    }
 }
