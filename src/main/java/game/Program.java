@@ -93,6 +93,16 @@ public class Program {
         }
 
        teams.forEach(n-> n.step(teams2));
+        System.out.println("==========выполнение метода степ для лучников: ");
+        for (BaseUnit pers:teams) {
+            if (pers instanceof Arbalester){
+                pers.step(teams2);
+            }
+        }
+        System.out.println("=========== ИНформация по первой команде после степа: ");
+        teams.forEach(n-> System.out.println(n.getInfo()));
+
+
 //        System.out.println("Nearest Person: ");
 //
 //        System.out.println("К "+ teams.get(0).getInfo() +" ближайший враг: "+ teams.get(0).nearestEnemy(teams2).getInfo());
