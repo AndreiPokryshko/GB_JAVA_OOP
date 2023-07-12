@@ -28,6 +28,17 @@ public abstract class BaseUnit implements Intarface {
         return String.format("Name: %s Hp: %d Strength: %d Unit: %s (%d, %d)", this.name, Math.round(this.hp), this.strength, this.getClass().getSimpleName(), this.coordinates.x, this.coordinates.y);
     }
 
+    public double getHelth() {
+        return Math.round(this.hp);
+    }
+
+    public void getDamage(int damage) {
+        if (this.hp - damage > 0) {
+            this.hp -= damage;
+        } else this.hp = 0;
+
+    }
+
     public BaseUnit nearestEnemy(ArrayList<BaseUnit> enemy) {
         double nearstDistance = Double.MAX_VALUE;
         BaseUnit nearestEnemy = null;
@@ -40,6 +51,13 @@ public abstract class BaseUnit implements Intarface {
         return nearestEnemy;
     }
 
+    public boolean isPeasantsLive(ArrayList<BaseUnit> team_) {
+        for (int i = 0; i < team_.size(); i++) {
+            if (team_.get(i) instanceof Peasant & team_.get(i).hp!=0) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-
-}
+    }
