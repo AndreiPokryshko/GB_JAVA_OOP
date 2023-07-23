@@ -5,6 +5,6 @@ import java.util.ArrayList;
 public interface Intarface {
 
     String getInfo();
-    void step(ArrayList enemy);
+    void step(ArrayList<BaseUnit> enemy, ArrayList<BaseUnit> friend);
 
 }

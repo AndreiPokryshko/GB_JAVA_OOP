@@ -5,11 +5,13 @@
 
 package game;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
+import game.View;
 
 public class Program {
+    public static ArrayList<BaseUnit> teams = new ArrayList<>();
+    public static ArrayList<BaseUnit> teams2 = new ArrayList<>();
+    public static ArrayList<BaseUnit> allTeam= new ArrayList<>();
     public static void main(String[] args) {
 //        Peasant peasant1 = new Peasant();
 //        System.out.println(peasant1.getInfo());
@@ -28,9 +30,7 @@ public class Program {
 //        Monk monk2 = new Monk();
 //        System.out.println(monk2.getInfo());
 
-        int teamcount = 5;
-        ArrayList<BaseUnit> teams = new ArrayList<>();
-        ArrayList<BaseUnit> teams2 = new ArrayList<>();
+        int teamcount = 10;
 
         System.out.println("Команда №1: ");
         for (int i = 0; i < teamcount; i++) {
@@ -92,13 +92,23 @@ public class Program {
             System.out.println(i + 1 + ". " + teams2.get(i).getInfo());
         }
 
-       teams.forEach(n-> n.step(teams2));
-        System.out.println("==========выполнение метода степ для лучников: ");
-        for (BaseUnit pers:teams) {
-            if (pers instanceof Arbalester){
-                pers.step(teams2);
+        allTeam.addAll(teams);
+        allTeam.addAll(teams2);
+        allTeam.sort(new Comparator<BaseUnit>() {
+            @Override
+            public int compare(BaseUnit o1, BaseUnit o2) {
+                return o1.strength- o2.strength;
             }
-        }
+        });
+View.view();
+System.out.println("==========выполнение степ: ");
+       teams.forEach(n-> n.step(teams2, teams));
+
+//        for (BaseUnit pers:teams) {
+//            if (pers instanceof Arbalester){
+//                pers.step(teams2, teams);
+//            }
+//        }
         System.out.println("=========== ИНформация по первой команде после степа: ");
         teams.forEach(n-> System.out.println(n.getInfo()));
 

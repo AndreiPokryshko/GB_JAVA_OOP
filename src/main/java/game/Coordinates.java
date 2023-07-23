@@ -14,11 +14,11 @@ public class Coordinates {
         return Math.sqrt(Math.pow(dx,2)+Math.pow(dy,2));
     }
 
-    //    public int getX() {
-//        return x;
-//    }
-//
-//    public int getY() {
-//        return y;
-//    }
+public int getX() {
+       return x;
+   }
+
+   public int getY() {
+       return y;
+   }
 }

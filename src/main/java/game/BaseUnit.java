@@ -11,31 +11,47 @@ public abstract class BaseUnit implements Intarface {
     float maxHp;
     int strength;
     Coordinates coordinates;
+    String statusOfPerson; //Stand, Busy, Heal, CastMana, Shoot, Died
 
-    static {
+  static {
         BaseUnit.r = new Random();
     }
 
-    public BaseUnit(String name, float hp, int strength, int x, int y) {
+    public BaseUnit(String name, float hp, int strength, int x, int y, String statusOfPerson) {
         this.name = name;
         this.hp = hp;
         this.maxHp = hp;
         this.strength = strength;
         coordinates = new Coordinates(x, y);
+        this.statusOfPerson=statusOfPerson;
+    }
+
+    public int[] getCoords() {
+       int [] coord=new int[] {coordinates.x, coordinates.y};
+       return coord;
     }
 
     public String getInfo() {
-        return String.format("Name: %s Hp: %d Strength: %d Unit: %s (%d, %d)", this.name, Math.round(this.hp), this.strength, this.getClass().getSimpleName(), this.coordinates.x, this.coordinates.y);
+        return String.format("Name: %s Hp: %d Strength: %d Unit: %s (%d, %d), Status: %s", this.name, Math.round(this.hp), this.strength, this.getClass().getSimpleName(), this.coordinates.x, this.coordinates.y, statusOfPerson);
+    }
+
+    @Override
+    public String toString(){
+        return this.getClass().getSimpleName();
     }
 
     public double getHelth() {
         return Math.round(this.hp);
     }
 
+
     public void getDamage(int damage) {
-        if (this.hp - damage > 0) {
-            this.hp -= damage;
-        } else this.hp = 0;
+        if (this.hp - damage < 0) {
+            this.hp = 0;
+            this.statusOfPerson="Died";
+        } else if (this.hp>maxHp) {
+            this.hp=maxHp;
+        } else this.hp -= damage;
 
     }
 
