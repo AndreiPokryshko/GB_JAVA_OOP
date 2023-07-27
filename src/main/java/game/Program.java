@@ -13,25 +13,7 @@ public class Program {
     public static ArrayList<BaseUnit> teams2 = new ArrayList<>();
     public static ArrayList<BaseUnit> allTeam= new ArrayList<>();
     public static void main(String[] args) {
-//        Peasant peasant1 = new Peasant();
-//        System.out.println(peasant1.getInfo());
-//        Arbalester arbalester1 = new Arbalester();
-//        System.out.println(arbalester1.getInfo());
-//        Pikeman pikeman1 = new Pikeman();
-//        System.out.println(pikeman1.getInfo());
-//        Sniper sniper1 = new Sniper();
-//        System.out.println(sniper1.getInfo());
-//        Bandit bandit1 = new Bandit();
-//        System.out.println(bandit1.getInfo());
-//        Magican magican1 = new Magican();
-//        System.out.println(magican1.getInfo());
-//        Monk monk1 = new Monk();
-//        System.out.println(monk1.getInfo());
-//        Monk monk2 = new Monk();
-//        System.out.println(monk2.getInfo());
-
-        int teamcount = 10;
-
+        int teamcount = 10;//количество персонажей в команде
         System.out.println("Команда №1: ");
         for (int i = 0; i < teamcount; i++) {
             int val = BaseUnit.r.nextInt(teamcount);

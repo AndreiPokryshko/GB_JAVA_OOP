@@ -47,7 +47,7 @@ public class View {
                 System.out.print(AnsiColors.ANSI_YELLOW+ "Step " + step + AnsiColors.ANSI_RESET);
             }
             step++;
-            Program.allTeam.forEach((v) -> l[0] = Math.max(l[0], v.getInfo().length()));
+            Program.allTeam.forEach((v) -> l[0] = Math.max(l[0], v.getInfo().length()));//расчет количества отступов
             System.out.print("_".repeat(l[0]*2));
             System.out.println("");
             System.out.print(top10 + "    ");
@@ -55,7 +55,7 @@ public class View {
             //for (int i = 0; i < l[0]-9; i++)
             System.out.print(" ".repeat(l[0]-9));
             System.out.println(AnsiColors.ANSI_BLUE+"Blue side"+AnsiColors.ANSI_RESET);
-            for (int i = 1; i < 11; i++) {
+            for (int i = 1; i < 11; i++) {//вывод верхней строчки
                 System.out.print(getChar(1, i));
             }
             System.out.print("|    ");

@@ -11,7 +11,7 @@ public abstract class BaseUnit implements Intarface {
     float maxHp;
     int strength;
     Coordinates coordinates;
-    String statusOfPerson; //Stand, Busy, Heal, CastMana, Shoot, Died
+    String statusOfPerson; //Stand, Busy, Heal, CastMana, Shoot, Died, Fight
 
   static {
         BaseUnit.r = new Random();
